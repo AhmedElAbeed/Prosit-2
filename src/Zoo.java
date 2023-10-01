@@ -1,16 +1,17 @@
 import java.util.ArrayList;
 import java.util.List;
 class Zoo {
+    static final int nbrCages = 25;
+
     Animal[] animals;
     String name;
     String city;
-    int nbrCages;
+    int nbrAnimals;
     private List<Animal> animalsList = new ArrayList<>();
 
     public Zoo(String name, String city, int nbrCages) {
         this.name = name;
         this.city = city;
-        this.nbrCages = nbrCages;
         this.animals = new Animal[nbrCages];
     }
 
@@ -35,11 +36,11 @@ class Zoo {
                 if (animals[i] == null) {
                     animals[i] = animal;
                     animalsList.add(animal);
-                    return true; // L'ajout a été effectué avec succès.
+                    return true;
                 }
             }
         }
-        return false; // Le zoo est plein ou l'animal est déjà présent, impossible d'ajouter l'animal.
+        return false;
     }
 
     public boolean removeAnimal(Animal animal) {
@@ -61,4 +62,21 @@ class Zoo {
         }
         return -1; // L'animal n'a pas été trouvé.
     }
+    boolean isZooFull() {
+        return nbrAnimals == nbrCages;
+    }
+
+    static Zoo comparerZoo(Zoo z1, Zoo z2) {
+        if (z1.nbrAnimals > z2.nbrAnimals)
+            return z1;
+        return z2;
+    }
+
+    @Override
+    public String toString() {
+        return "Name: " + name + ", City: " + city + ", N° Cages: " + nbrCages + " N° animals: " + nbrAnimals;
+    }
+
+
+
 }

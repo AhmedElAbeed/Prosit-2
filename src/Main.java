@@ -6,6 +6,8 @@ public class Main {
         Animal eagle = new Animal("bird", "eagle", 17, true);
 
         Zoo myZoo = new Zoo("Mon Zoo", "Ma Ville", 10);
+        Zoo zooz = new Zoo("Pas Mon Zoo", "Pas Ma Ville", 10);
+
         myZoo.addAnimal(lion);
         myZoo.addAnimal(eagle);
         myZoo.displayZoo();
@@ -27,5 +29,9 @@ public class Main {
 
         System.out.println("##########################");
         myZoo.displayAnimals();
+
+        System.out.println(Zoo.comparerZoo(myZoo, zooz));
+        System.out.println(myZoo.isZooFull());
+
     }
 }
