@@ -1,3 +1,5 @@
+package tn.esprit.gestionzoo.entities;
+
 import java.util.ArrayList;
 import java.util.List;
 class Zoo {
@@ -9,10 +11,14 @@ class Zoo {
     int nbrAnimals;
     private List<Animal> animalsList = new ArrayList<>();
 
-    public Zoo(String name, String city, int nbrCages) {
-        this.name = name;
-        this.city = city;
-        this.animals = new Animal[nbrCages];
+    public Zoo(String name, int nbrAnimals) {
+        if (name != null && !name.isEmpty()) {
+            this.name = name;
+        } else {
+            throw new IllegalArgumentException("Le nom du zoo ne peut pas être vide.");
+        }
+        this.nbrAnimals = nbrAnimals;
+        this.animals = new Animal[nbrAnimals];
     }
 
     public void displayZoo() {

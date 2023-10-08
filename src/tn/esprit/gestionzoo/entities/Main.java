@@ -1,12 +1,13 @@
+package tn.esprit.gestionzoo.entities;
 
 public class Main {
     public static void main(String[] args) {
 
-        Animal lion = new Animal("Félin", "Lion", 5, true);
-        Animal eagle = new Animal("bird", "eagle", 17, true);
+        Animal lion = new Animal("Félin", 5);
+        Animal eagle = new Animal("bird",  17);
 
-        Zoo myZoo = new Zoo("Mon Zoo", "Ma Ville", 10);
-        Zoo zooz = new Zoo("Pas Mon Zoo", "Pas Ma Ville", 10);
+        Zoo myZoo = new Zoo("Mon Zoo", 10);
+        Zoo zooz = new Zoo("Pas Mon Zoo", 10);
 
         myZoo.addAnimal(lion);
         myZoo.addAnimal(eagle);
