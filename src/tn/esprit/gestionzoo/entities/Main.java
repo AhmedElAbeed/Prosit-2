@@ -14,8 +14,19 @@ public class Main {
         myZoo.addAnimal(dog);
         myZoo.addAnimal(lion);
 
+        Dolphin anotherDolphin = new Dolphin("Ocean", 30.2f);
+        myZoo.addAquaticAnimal(anotherDolphin);
+
         System.out.println("Animals in the Zoo:");
         myZoo.displayAnimals();
+
+        System.out.println("Aquatic Animals Swimming:");
+        myZoo.displayAquaticAnimalsSwimming();
+
+        System.out.println("Maximum Penguin Swimming Depth: " + myZoo.maxPenguinSwimmingDepth());
+
+        System.out.println("Number of Aquatics in the Zoo:");
+        myZoo.displayNumberOfAquaticsByType();
 
         String searchName = "Lion";
         int animalIndex = myZoo.searchAnimal(searchName);
